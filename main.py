@@ -82,7 +82,8 @@ print(f'Entertainment:{Entertainment}')
 
 input("Are you satisfied with your trip? Y or N")
 
- 
+#  Pascal demo start
+#  Pascal demo end
 
 def re_select_option (Destination_list, Restuarant_list,transportation_list, entertainment_list):
     confirm_bool = True
