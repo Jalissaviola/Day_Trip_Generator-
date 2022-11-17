@@ -1,7 +1,5 @@
 import random 
 
-
-
                     #0           1             2          3
 Destinations= ["Miami",  "New Orleans",  "New York",  "Seattle"]
 
@@ -11,152 +9,205 @@ Transportations= ["Bus", "Train", "Jet", "Scooter"]
 
 Entertainments = ["Museum", "Bar", "Site-seeing", "Dancing"]
 
+destination = random.choice(Destinations)
 
+restaurant = random.choice(Restaurants)
 
+transportation = random.choice(Transportations)
 
-#def run_day_trip_generator(): 
-    #print(f'Destination:{random.choice(Destinations)}')
+entertainment = random.choice(Entertainments)
 
-    #print(f'Restaurant: {random.choice(Restaurants)}')
+d = random.choice(Destinations)
+r= random.choice(Restaurants)
+t= random.choice(Transportations)
+e= random.choice(Entertainments)
 
-    #print(f'Transportation:{random.choice(Transportations)}')
+new_trip=[d,r,t,e]
 
-    #print(f'Entertainment:{random.choice(Entertainments)}')
+#list_of_options= Destinations + Restaurants + Transportations + Entertainments
+
+def run_trip():
+    day_trip = [destination,restaurant, transportation, entertainment]
     
-    #return run_day_trip_generator
+    print(f'Destination:{day_trip[0]}')
+
+    print(f'Restaurant: {day_trip[1]}')
+
+    print(f'Transportation:{day_trip[2]}')
+
+    print(f'Entertainment:{day_trip[3]}')
+
+    user_input = input("Are you satisfied with your trip?")
+
+    print(user_input)
+        
+    if user_input == "Y":
+          print(f'Destination:{day_trip[0]}')
+
+          print(f'Restaurant: {day_trip[1]}')
+
+          print(f'Transportation:{day_trip[2]}')
+
+          print(f'Entertainment:{day_trip[3]}')
+          
+            
+              
+    else:
+        
+        reselect_option()
+        satisfied_trip()
+
+    
+
+    
 
 
 
-#print(f'Destination:{random.choice(Destination_list)}')
 
-#print(f'Restaurant: {random.choice(Restaurant_List)}')
+def run_day_trip_generator():
+    
+    print("Oh no!")
+    print("Lets Plan another getaway!")
+    
+    user_input = input("Are you ready for your next trip?")
+    print(user_input)
 
-#print(f'Transportation:{random.choice(Transportation_list)}')
+    if user_input =="Y":
+        print(f'Destination:{day_trip[0]}')
 
-#print(f'Entertainment:{random.choice(Entertainment_list)}')
+        print(f'Restaurant: {day_trip[1]}')
 
+        print(f'Transportation:{day_trip[2]}')
 
-#rand_int= random.randrange(0,4)
-#print(f'Destination:{Destination_list[rand_int]}')
+        print(f'Entertainment:{day_trip[3]}')
 
-#rand_int= random.randrange(0,4)
-#print(f'Restaurant:{Restaurant_List[rand_int]}')
+    
+    destination = random.choice(Destinations)
 
-#rand_int = random.randrange(0,4)
-#print(f'Transportation:{Transportation_list[rand_int]}')
+    restaurant = random.choice(Restaurants)
 
-#rand_int= random.randrange(0,4)
-#print(f'Entertainment:{Entertainment_list[rand_int]}')
+    transportation = random.choice(Transportations)
 
+    entertainment = random.choice(Entertainments)
+
+    day_trip = [destination,restaurant, transportation, entertainment]
+    #new_trip = [d,r,t,e,]
+    while True:
+    
+        print(f'Destination:{day_trip[0]}')
+
+        print(f'Restaurant: {day_trip[1]}')
+
+        print(f'Transportation:{day_trip[2]}')
+
+        print(f'Entertainment:{day_trip[3]}')
+
+        user_input = input("Are you satisfied with your trip?")
+
+        print(user_input)
+        if user_input == "Y":
+            print_trip()
+            break
+        
+        else:
+               
+            day_trip= reselect_option(day_trip)
+
+           # new_trip =reselect_trip (new_tri
+                #day_trip= reselect_option(day_trip)
+          
+
+def print_trip():
+
+        print("")
+        print("Here is your Day Trip!!")
+        print(f'Destination:{destination}')
+        print(f'Restaurant: {restaurant}')
+        print(f'Transportation:{transportation}')
+        print(f'Entertainment:{entertainment}')
+        print("")
+        print("Enjoy!!!")  
+    
+
+    
+
+        
+
+def reselect_option():
    
-   
-def select_destination(Destination_list):
-        select_destination = random.choice(Destination_list)
-        return select_destination
+    
+    while True:
+        print("Oh no!")
+        print("Lets Plan another trip!")
+        user_input = input("Are you ready for your next trip?")
+        print(user_input)
 
-Destination = select_destination(Destinations)
-print(f'Destination:{Destination}')
-
-def select_restuarant(Restuarant_list):
-    select_restuarant = random.choice(Restuarant_list)
-    return select_restuarant
-
-Restaurant = select_restuarant(Restaurants)
-print(f'Restaurant:{Restaurant}')
-
-
-def select_transportation(transportation_list): 
-    select_transportation = random.choice(transportation_list)
-    return select_transportation 
-
-transporation = select_transportation(Transportations)
-print(f'Transportation:{transporation}')
-
-
-def select_entertainment(entertainment_list):
-    select_entertainment = random.choice(entertainment_list)
-    return select_entertainment
-
-Entertainment = select_entertainment(Entertainments)
-print(f'Entertainment:{Entertainment}')
-
-Trips = Destination, Restaurant,transporation, Entertainment
-
-user_input= input(f'Are you satisfied with your Trip: {Trips}? Y or N') 
-
-
-def re_select_option (Destinations, Restaurants,Transportations, Entertainments):
-    confirm_bool = True 
-    while confirm_bool:
-
-        re_select_Destinations = random.choice(Destinations)  
-        re_select_restuarant = random.choice(Restaurants)
-        re_select_transportation = random.choice(Transportations)
-        re_select_entertainment = random.choice(Entertainments)
-if user_input == "N":
-    print(input(f'Which option would you like to change? Destination, Restaurant, transporation, Entertainment'))
-
-elif user_input == "Restuarant":
-            print( re_select_Destinations = random.choice(Restaurants))
-   
-elif user_input == "Y":
-    print(f'Here is your Final Trip!:{Trips}')
-
-
-
-#  Pascal demo 
   
-#  Pascal demo end
+        if user_input=="Y":
+            print_new_trip()
+            
+            break
+            print(d)
+            print(r)
+            print(t)
+            print(e)
+        else:
+            print(d)
+            print(r)
+            print(t)
+            print(e)
+            break 
+    
+           
+def print_new_trip():
 
-#def re_select_option (Destination_list, Restuarant_list,transportation_list, entertainment_list): confirm_bool = True
-#while confirm_bool:
-        #re_select_destination = random.choice(Destination_list)
-        #re_select_restuarant = random.choice(Restuarant_list)
-        #re_select_transportation = random.choice(transportation_list)
-        #re_select_entertainment = random.choice(entertainment_list)
-        #user_input= re_select_destination, re_select_restuarant, re_select_transportation, re_select_entertainment
-        #print(user_input)
-        #Destination = re_select_option(Destinations)
-        #Restaurant = re_select_option(Restaurants)
-        #Transportation = re_select_option(Transportations)
-        #Entertainment = re_select_option (Entertainments)
-        #if user_input == "N":
-            #print(input(f'Which option would you like to change?: {Destination}, {Restaurant}, {Transportation}, {Entertainment})'))
-        #else: confirm_bool = False 
-        #print(f'Here is your day Trip!: ')
-       
+            print(d)
+            print(r)
+            print(t)
+            print(e)
 
-    #return re_select_option(Destination_list,Restuarant_list, transportation_list, entertainment_list)
+    
 
+def reselect_trip():
 
-         
+    user_input = input("are")
+    print(user_input)
+    new_trip = [d,r,t,e,]
 
-
-#def re_select_option()
-
-
-
+    print(f'New Destination:{d}')
+    print(f'Restaurant: {r}')
+    print(f'Transportation:{t}')
+    print(f'Entertainment:{e}')
+    print(new_trip)
+    print("Enjoy!!!")  
    
-#else: 
-        #print(f'Here is your Day Trip!:{Trips}')
+        
+def satisfied_trip():
+    user_input= input("Are you satisfied with your new trip?")
+    print(user_input)
+    while True:
+        if user_input == "Y": 
+        
+            print("Enjoy!")
+            break
+        
+        else:
+            reselect_option(d,r,t,e,)
+        
 
-#print()
+    
+        user_input= input("Are you satisfied with your new trip?")
+        print(user_input)
+        
+        if user_input == "y":
+                    print(d)
+                    print(r)
+                    print(t)
+                    print(e)
 
-def select_trip(trip_lists):
-    confirm_bool =True 
-    #while confirm_bool: 
-   #select_trip = trip_lists
-#user_input = input("Are you satisfied with your trip?! (Y/N)")
-#if user_input =='N':
-   #input(f'Which option would you like to change{Destination}, {Restaurant}, {transporation}, {Entertainment}')
-#print(select_trip)
+        else:
+            print()
+           
 
+run_trip()
 
-#def select_destination(Destination_list):
-    #confirm_bool = True
-    #while confirm_bool:
-        #selected_destination = random.choice(Destination_list)
-        #user_input = input(f'Are you satisfied with your trip to{selected_destination}(Y/N)?')
-        #if user_input == "N": 
-           # pass 
-        #return selected_destination
